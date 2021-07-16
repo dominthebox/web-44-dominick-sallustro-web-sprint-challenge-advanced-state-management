@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
     const { smurfs, loading } = props;
 
 
-    const isLoading = false;
+    const isLoading = loading;
     const testSmurf = {
         id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
         name:'Poppa Smurf',
