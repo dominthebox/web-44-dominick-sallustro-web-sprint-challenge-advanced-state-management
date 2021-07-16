@@ -7,8 +7,18 @@ import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
+import axios from 'axios'
+import { connect } from 'react-redux';
+import { fetchSmurfs } from './actions';
+
 class App extends Component {
   render() {
+
+    axios.get(`http://localhost:3333/smurfs`)
+    .then(res=> {
+      console.log(res.data);
+    })
+
     return (
       <div className="App">
         <Header />
@@ -21,6 +31,8 @@ class App extends Component {
     );
   }
 }
+
+
 
 export default App;
 
