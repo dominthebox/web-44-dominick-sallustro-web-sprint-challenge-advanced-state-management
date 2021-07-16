@@ -6,6 +6,20 @@ export const FETCH_FAIL = "FETCH_FAIL";
 export const ADD_SMURF = "ADD_SMURF";
 export const ERROR_MESSAGE = "ERROR_MESSAGE";
 
+export const fetchSmurfs = () => {
+    return(dispatch => {
+        dispatch(fetchStart());
+        axios.get(`http://localhost:3333/smurfs`)
+        .then(res=> {
+            dispatch(fetchSuccess(res.data))
+        })
+        .catch(error => {
+            dispatch(fetchFail());
+            console.log('Houston, we have a problem: ', error)
+        })
+    });
+}
+
 export const fetchStart = () => {
     return({type: FETCH_START});
 }
@@ -26,18 +40,6 @@ export const errorMessage = (error) => {
     return({type: ERROR_MESSAGE, payload: error});
 }
 
-export const fetchSmurfs = () => {
-    return(dispatch => {
-        dispatch(fetchStart());
-        axios.get(`http://localhost:3333/smurfs`)
-        .then(res=> {
-            dispatch(fetchSuccess(res.data))
-        })
-        .catch(error => {
-            console.log('Houston, we have a problem: ', error)
-        })
-    });
-}
 
 
 

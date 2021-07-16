@@ -9,17 +9,13 @@ import "./App.css";
 
 
 import { connect } from 'react-redux';
-import { fetchStart, fetchSuccess } from './actions';
-import axios from "axios";
+import { fetchSmurfs } from './actions';
+
 
 class App extends Component {
   render() {
   
-    this.props.fetchStart();
-    axios.get(`http://localhost:3333/smurfs`)
-      .then(res=> {
-        this.props.fetchSuccess(res.data);
-      })
+    fetchSmurfs();
     
     return (
       <div className="App">
@@ -36,7 +32,7 @@ class App extends Component {
 
 
 
-export default connect(null, {fetchStart, fetchSuccess})(App);
+export default connect(null, {fetchSmurfs})(App);
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.

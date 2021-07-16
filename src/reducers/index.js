@@ -45,7 +45,7 @@ const reducer = (state = initialState, action)=>{
         case ERROR_MESSAGE:
             return {
                 ...state,
-                error: action.payload
+                error: "Name, position and nickname fields are required."
             };
         default:
             return state;

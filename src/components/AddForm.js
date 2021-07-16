@@ -4,7 +4,7 @@ import { addSmurf, errorMessage } from './../actions';
 
 const AddForm = (props) => {
 
-    const { error } = props;    
+    const { addSmurf, errorMessage } = props;    
     const [state, setState] = useState({
         name:"",
         position:"",
@@ -21,6 +21,7 @@ const AddForm = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        addSmurf('jimmy', 'worker', 'jimbo', 'classic jimmy');
         if (state.name === "" || state.position === "" || state.nickname === "") {
             errorMessage = "Name, position and nickname fields are required.";
         }
