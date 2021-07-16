@@ -34,7 +34,7 @@ class App extends Component {
 
 
 
-export default App;
+export default connect()(App);
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.
