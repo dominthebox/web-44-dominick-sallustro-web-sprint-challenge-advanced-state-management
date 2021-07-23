@@ -15,7 +15,7 @@ import { fetchSmurfs } from './actions';
 class App extends Component {
   render() {
   
-    fetchSmurfs();
+    this.props.fetchSmurfs();
     
     return (
       <div className="App">
